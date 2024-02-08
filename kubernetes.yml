@@ -32,17 +32,6 @@ data:
   #TICK_DISTANCE: "4"
   #MAX_THREADS: "8"
 ---
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: bds
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
----
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -89,7 +78,7 @@ spec:
       volumes:
         - name: mc-volume
           hostPath:
-            path: /Users/robert/mc-data
+            path: $home/mc-data
 ---
 apiVersion: v1
 kind: Service
@@ -101,9 +90,4 @@ spec:
   ports:
     - port: 19132
       protocol: UDP
-#  ipFamily: IPv4
-  # Use LoadBalancer if running on a provider that supports that
   type: LoadBalancer
-  # or use NodePort on a non-managed system;
-  # however, you'll need to lookup port assigned to the service
-#  type: NodePort
