@@ -78,7 +78,7 @@ spec:
       volumes:
         - name: mc-volume
           hostPath:
-            path: $home/mc-data
+            path: $HOME/minecraft-data
 ---
 apiVersion: v1
 kind: Service
