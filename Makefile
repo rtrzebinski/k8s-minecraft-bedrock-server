@@ -39,3 +39,10 @@ restart: ## Restart server
 
 logs: ## See server logs
 	@kubectl -n minecraft-server logs statefulset/bds -f
+
+bash: ## Exec bash in the server pod
+	@kubectl exec -it bds-0 -n minecraft-server -- bash
+
+config: ## Configure server once running
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule dofiretick false
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule showCoordinates true

@@ -8,7 +8,7 @@ Requires Docker Desktop with Kubernetes enabled.
 
 Use make commands to interact with the server.
 
-```
+```sh
 $ make
 target                         help
 ------                         ----
@@ -17,11 +17,13 @@ start                          Start server
 stop                           Stop server
 restart                        Restart server
 logs                           See server logs
+bash                           Exec bash in the server pod
+config                         Configure server once running
 ```
 
 ### Start
 
-```
+```sh
 $ make start
 namespace/minecraft-server created
 configmap/minecraft-bedrock created
@@ -32,14 +34,14 @@ service/bds created
 
 ### Stop
 
-```
+```sh
 $ make stop
 namespace "minecraft-server" deleted
 ```
 
 ### Logs
 
-```
+```sh
 $ make logs
 DEBU[0000] Using /data to match uid and gid             
 DEBU[0000] Resolved UID=0 from match path               
@@ -71,6 +73,32 @@ NO LOG FILE! - setting up server logging...
 [2024-02-08 06:26:50:934 INFO] to the server.properties file in the handheld/src-server directory
 [2024-02-08 06:26:50:935 INFO] ======================================================
 ```
+
+## Configuration
+
+### Configuration on server startup
+
+Some configuration needs to be passed as an ENV when server is being created - for instance seed or difficulty level.
+
+In order to change those, update the ConfigMap in `kubernetes.yml` file and start/restart the server.
+
+### Configuration on running server
+
+Other things can only be configured on a running server - for instance showing coordinates.
+
+Those can be changed using Minecraft Bedrock commands -> [https://minecraftbedrock-archive.fandom.com/wiki/Commands/List_of_Commands](https://minecraftbedrock-archive.fandom.com/wiki/Commands/List_of_Commands).
+
+In order to run command on a server use `make bash` + `send-command`:
+
+```sh
+$ make bash
+root@bds-0:/data# send-command gamerule showCoordinates true
+root@bds-0:/data# 
+```
+
+You can also add some commands you often run on new server to `Makefile` and apply them with `make config`.
+
+Pro tip - run `make logs` in one terminal tab and commands in another, to see if they are being processed correctly. 
 
 ## Backup
 
