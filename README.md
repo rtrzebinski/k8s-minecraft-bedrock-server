@@ -27,7 +27,7 @@ namespace/minecraft-server created
 configmap/minecraft-bedrock created
 statefulset.apps/bds created
 service/bds created
-==> Running on 192.168.0.103:19132
+==> Running on port 19132
 ```
 
 ### Stop
@@ -82,8 +82,18 @@ To restore the backup restore those files and restat the server.
 
 ## Connection
 
+Server listens on TCP/UDP port `19132`.
+
+### LAN
+
 Server runs in a local network (LAN).
 
-Local IP will be displayed on server start - this ip can be used to connect to the server by clients withing the same network.
+Local IP can be used to connect to the server by clients in the same network.
 
-To access from the Intenret (outside of LAN) redirect port `19132 TCP/UDP` on your router to a server local IP.
+To find out your local IP check `System Settings -> Network -> pick active network -> Details -> IP address`.
+
+### Internet
+
+To access from the Internet (outside of LAN) redirect port `19132 TCP/UDP` on your router to a server local IP.
+
+Use your network public IP (google: "what is my ip") to connect or configure a Dynamic DNS service.

@@ -5,7 +5,6 @@ WARN_COLOR=\033[33;01m
 NAMESPACE=minecraft-server
 DATAFOLDER=minecraft-data
 HOME ?= $(shell echo $$HOME)
-IP ?= $(shell ipconfig getifaddr en0)
 
 default: help
 
@@ -29,7 +28,7 @@ start: ## Start server
 	@kubectl create namespace $(NAMESPACE)
 	@mkdir -p $(HOME)/$(DATAFOLDER)
 	@envsubst < kubernetes.yml | kubectl -n $(NAMESPACE) apply -f -
-	@echo "$(OK_COLOR)==> Running on $(IP):19132 $(NO_COLOR)"
+	@echo "$(OK_COLOR)==> Running on port 19132 $(NO_COLOR)"
 
 stop: ## Stop server
 	@kubectl delete namespace $(NAMESPACE) --ignore-not-found=true
