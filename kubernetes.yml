@@ -13,8 +13,8 @@ data:
   GAMEMODE: "survival" # Options: survival, creative, adventure
   DIFFICULTY: "easy" # Options: peaceful, easy, normal, hard
   DEFAULT_PLAYER_PERMISSION_LEVEL: "member" # Options: visitor, member, operator
-  LEVEL_NAME: "lake_village_blossom_valley"
-  LEVEL_SEED: "6384763642861273108"
+  LEVEL_NAME: "The Cherry Blossom Villages"
+  LEVEL_SEED: "9064150133272194"
   SERVER_NAME: "robert_server"
   #SERVER_PORT: "19132"
   #LEVEL_TYPE: "DEFAULT" # Options: FLAT, LEGACY, DEFAULT
