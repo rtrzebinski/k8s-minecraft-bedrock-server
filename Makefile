@@ -33,3 +33,7 @@ start: ## Start server
 
 stop: ## Stop server
 	@kubectl delete namespace $(NAMESPACE) --ignore-not-found=true
+
+restart: ## Restart server
+	@make stop
+	@make start
