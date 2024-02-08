@@ -12,6 +12,7 @@ help                           Show this help
 start                          Start server
 stop                           Stop server
 restart                        Restart server
+logs                           See server logs
 ```
 
 On start it will create a `~/minecraft-data` folder - it can be backed up by copying to another path/drive. To restore the backup restore these files and restat the server.

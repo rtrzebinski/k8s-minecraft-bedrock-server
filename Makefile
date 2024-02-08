@@ -37,3 +37,6 @@ stop: ## Stop server
 restart: ## Restart server
 	@make stop
 	@make start
+
+logs: ## See server logs
+	@kubectl -n minecraft-server logs statefulset/bds -f
