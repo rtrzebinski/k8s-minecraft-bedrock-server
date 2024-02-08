@@ -74,10 +74,16 @@ NO LOG FILE! - setting up server logging...
 
 ## Backup
 
-On start it will create a `~/minecraft-data` folder - it can be backed up by copying to another path/drive. To restore the backup restore those files and restat the server.
+On first start a `~/minecraft-data` folder will be created (if not existing). 
+
+It can be backed up by copying to another path/drive.
+
+To restore the backup restore those files and restat the server.
 
 ## Connection
 
-Server runs in a local network (LAN). Local IP will be displayed on server start - this ip can be used to connect to the server by clients withing the same network.
+Server runs in a local network (LAN).
+
+Local IP will be displayed on server start - this ip can be used to connect to the server by clients withing the same network.
 
 To access from the Intenret (outside of LAN) redirect port `19132 TCP/UDP` on your router to a server local IP.
