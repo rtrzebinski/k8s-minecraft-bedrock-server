@@ -44,6 +44,11 @@ bash: ## Exec bash in the server pod
 	@kubectl exec -it bds-0 -n minecraft-server -- bash
 
 config: ## Configure server once running
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command op rtrzebinski
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule dofiretick false
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule showCoordinates true
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule pvp false
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule drowningdamage false
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule falldamage false
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule keepinventory true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command setworldspawn 8 77 127
