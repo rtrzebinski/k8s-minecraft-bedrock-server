@@ -13,8 +13,8 @@ data:
   GAMEMODE: "survival" # Options: survival, creative, adventure
   DIFFICULTY: "easy" # Options: peaceful, easy, normal, hard
   DEFAULT_PLAYER_PERMISSION_LEVEL: "member" # Options: visitor, member, operator
-  LEVEL_NAME: "Plains & Surface Lava"
-  LEVEL_SEED: "-1718501946501227358"
+  LEVEL_NAME: "Hills, Valleys, and Ancient Cities"
+  LEVEL_SEED: "8764718009920"
   SERVER_NAME: "robert_server"
   #SERVER_PORT: "19132"
   #LEVEL_TYPE: "DEFAULT" # Options: FLAT, LEGACY, DEFAULT

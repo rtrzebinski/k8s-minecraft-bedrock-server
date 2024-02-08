@@ -51,4 +51,3 @@ config: ## Configure server once running
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule drowningdamage false
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule falldamage false
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule keepinventory true
-	@kubectl exec -it bds-0 -n minecraft-server -- send-command setworldspawn 128 77 -176
