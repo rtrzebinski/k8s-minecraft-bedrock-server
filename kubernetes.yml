@@ -26,7 +26,7 @@ data:
   ## Changing these will have a security impact
   #ONLINE_MODE: "true" # Options: true, false (removes Xbox Live account requirements)
   WHITE_LIST: "true" # If enabled, need to provide a whitelist.json by your own means.
-  ALLOW_LIST_USERS: "rtrzebinski,Osa8807,IgorOsa1,Emceart,WashedHeart482,large_jumper5,Kl3mentynka"
+  ALLOW_LIST_USERS: "rtrzebinski,Osa8807,IgorOsa1,Emceart,WashedHeart482,large_jumper5,Kl3mentynka,Gerwazy3razy"
   #
   ## Changing these will have a performance impact
   #VIEW_DISTANCE: "10"
