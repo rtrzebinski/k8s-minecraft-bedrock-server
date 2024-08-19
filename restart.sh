@@ -1,4 +1,4 @@
 #!/bin/bash
-kubectx docker-desktop
+/usr/local/bin/kubectx docker-desktop
 cd /Users/robert/projects/minecraft-bedrock-server-kubernetes
-make restart
+/usr/bin/make restart
