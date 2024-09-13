@@ -98,7 +98,7 @@ root@bds-0:/data#
 
 You can also add some commands you often run on new server to `Makefile` and apply them with `make config`.
 
-Pro tip - run `make logs` in one terminal tab and commands in another, to see if they are being processed correctly. 
+Pro-tip - run `make logs` in one terminal tab and commands in another, to see if they are being processed correctly. 
 
 ## Backup
 
@@ -125,3 +125,18 @@ To find out your local IP check `System Settings -> Network -> pick active netwo
 To access from the Internet (outside of LAN) redirect port `19132 TCP/UDP` on your router to a server local IP.
 
 Use your network public IP (google: "what is my ip") to connect or configure a Dynamic DNS service.
+
+## Cron
+
+The following scripts can be run via CRON:
+
+```
+crontab -e
+
+0 5 * * * /Users/robert/projects/minecraft-bedrock-server-kubernetes/backup.sh >> /Users/robert/projects/minecraft-bedrock-server-kubernetes/backup.log 2>&1
+0 6 * * * /Users/robert/projects/minecraft-bedrock-server-kubernetes/restart.sh >> /Users/robert/projects/minecraft-bedrock-server-kubernetes/restart.log 2>&1
+```
+
+Each day at 5 AM the server will be backed up and at 6 AM it will be restarted.
+
+Logs will be saved in `backup.log` and `restart.log` files.

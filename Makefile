@@ -25,13 +25,13 @@ help: ## Show this help
     done
 
 start: ## Start server
-	@kubectl create namespace $(NAMESPACE)
+	@/usr/local/bin/kubectl create namespace $(NAMESPACE)
 	@mkdir -p $(HOME)/$(DATAFOLDER)
-	@envsubst < kubernetes.yml | kubectl -n $(NAMESPACE) apply -f -
+	@/usr/local/bin/envsubst < kubernetes.yml | /usr/local/bin/kubectl -n $(NAMESPACE) apply -f -
 	@echo "$(OK_COLOR)==> Running on port 19132 $(NO_COLOR)"
 
 stop: ## Stop server
-	@kubectl delete namespace $(NAMESPACE) --ignore-not-found=true
+	@/usr/local/bin/kubectl delete namespace $(NAMESPACE) --ignore-not-found=true
 
 restart: ## Restart server
 	@make stop
