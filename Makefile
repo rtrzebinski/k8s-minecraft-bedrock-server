@@ -51,4 +51,4 @@ config: ## Configure server once running
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule keepinventory true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule doimmediaterespawn true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule doinsomnia false
-
+	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule playersSleepingPercentage 51
