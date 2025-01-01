@@ -48,8 +48,6 @@ config: ## Configure server once running
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule dofiretick false
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule showCoordinates true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule pvp false
-	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule drowningdamage true
-	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule falldamage true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule keepinventory true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule doimmediaterespawn true
 	@kubectl exec -it bds-0 -n minecraft-server -- send-command gamerule doinsomnia false
